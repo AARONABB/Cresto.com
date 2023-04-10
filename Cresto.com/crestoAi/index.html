@@ -1,0 +1,227 @@
+<DOCTYPE html>
+  <html>
+  <head>
+    <title>Cresto Ai Tester</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+
+
+
+      body{
+        width:650px;
+         background-color: yellowgreen;
+
+      }
+
+    
+      #board {
+        border: 1px solid black;
+        background-color: gray;
+        height: 350px;
+        width: 650px;
+        margin-top:20px;
+      }
+      #gameinfo{
+        margin-top:10px;
+        margin-bottom:10px;
+        display:inline-block;
+        border:0px solid #ff0099;
+        width:100%;
+      }
+
+      #score{
+        border:0px solid #ff0000;
+        float:left;
+      }
+
+
+
+      #life{
+        border:0px solid #0099cc;
+        float:right;
+      }
+
+      .character {
+
+        background-color: lightblue;
+        width: 120px;
+        height: 120px;
+        padding: 10px;
+        margin: 10px;
+        float: left;
+        cursor:pointer;
+      }
+      .theif {
+
+        background-color: red;
+      }
+      .hidden {
+        display: none;
+      }
+      .visible {
+        display: block;
+      }
+
+
+     button{
+      height: 50px;
+      width: 50px;
+      background-color: lightgreen;
+   
+     }
+
+      </style>
+
+
+      <script type="text/javascript">
+
+        let gameScore = 0;
+        let gameLife = 3;
+
+        window.onload = function(){
+          initGame();
+        }
+
+
+        function initGame(){
+          let score = document.getElementById("score");
+          score.innerHTML = "Score: "+gameScore;
+
+          let life = document.getElementById("life");
+          life.innerHTML = "Life: "+gameLife;
+        }
+
+        function increaseScore(){
+          if(gameScore >= 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000){
+            alert("You Win you're promoted! YAY!!");
+          }else{
+            gameScore += 2;
+            let score = document.getElementById("score");
+            score.innerHTML = "Score: "+gameScore;
+          }
+
+        }
+
+        function decreaseScore(){
+          if(gameScore > 0){
+            gameScore -= 2;
+            let score = document.getElementById("score");
+            score.innerHTML = "Score: "+gameScore;
+          }else{
+            loose();
+          }
+        }
+
+        function loose(){
+          gameLife -= 1;
+          if(gameLife >=  1){
+            let life = document.getElementById("life");
+            life.innerHTML = "Life: "+gameLife;
+          }else{
+
+            gamerOver();
+          }
+        }
+
+        function gamerOver(){
+          let life = document.getElementById("life");
+          life.innerHTML = "Life: "+gameLife;
+          alert("Gamer Over you're fired");
+          gameScore = 0;
+          gameLife = 3;
+          initGame();
+
+        }
+
+        function createGuest(){
+          let board = document.getElementById("board");
+
+          for(let index=0;index < 6; index++){
+            board.children[index].innerHTML = "Guest "+(index+1);
+
+            board.children[index].style.backgroundColor = "lightblue";
+
+            //character on click
+            board.children[index].onclick = function(){
+              let character = board.children[index].innerHTML;
+
+              if(character == "Thief"){
+                increaseScore();
+                shuffleGuest();
+              }else{
+                decreaseScore();
+                shuffleGuest();
+              }
+            }
+          }
+
+          let randomNumber = Math.floor(Math.random()*6);
+
+          //alert(randomNumber);
+
+          board.children[randomNumber].innerHTML = "Thief";
+          board.children[randomNumber].style.backgroundColor = "red";
+
+        }
+
+        function shuffleGuest(){
+          let board = document.getElementById("board");
+
+          for(let index=0;index < 6; index++){
+            board.children[index].innerHTML = "Guest "+(index+1);
+
+            board.children[index].style.backgroundColor = "lightblue";
+
+            //character on click
+            board.children[index].onclick = function(){
+              let character = board.children[index].innerHTML;
+              if(character == "Thief"){
+                increaseScore();
+                shuffleGuest();
+              }else{
+                decreaseScore();
+                shuffleGuest();
+              }
+
+            }
+          }
+
+          let randomNumber = Math.floor(Math.random()*6);
+
+          //alert(randomNumber);
+
+          board.children[randomNumber].innerHTML = "Thief";
+          board.children[randomNumber].style.backgroundColor = "red";
+        }
+
+
+      </script>
+
+
+      </head>
+
+      <body>
+        <input type="button" value="Start Game" onclick="createGuest()";/>
+
+        <!-- <input type="button" value="Play" onclick="startGame()";/> -->
+
+        <div id="gameinfo">
+          <div id="score">Score:0</div>
+          <div id="life">Life:3</div>
+        </div>
+
+        <div id="board">
+          <div class="character">1</div>
+          <div class="character">2</div>
+          <div class="character">3</div>
+          <div class="character">4</div>
+          <div class="character">5</div>
+          <div class="character">6</div>
+        </div>
+
+
+
+      </body>
+    </html>
+
+    <!-- index.html by Aaron Abbas -->

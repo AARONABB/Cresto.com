@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<title> Cresto Calculater </title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+h1 {
+  font-size: 60px;
+	text-align: center;
+	padding: 23px;
+	background-color: yellowgreen;
+	color: rgb(27, 172, 1);
+	}
+
+#clear{
+width: 270px;
+border: 3px solid gray;
+	border-radius: 3px;
+	padding: 20px;
+	background-color: 00ff00;
+}
+
+.formstyle
+{
+width: 300px;
+height: 530px;
+margin: auto;
+border: 3px solid gray;
+border-radius: 5px;
+padding: 20px;
+}
+
+
+
+input
+{
+width: 20px;
+background-color: #3fbc19;
+color: rgb(0, 0, 0);
+border: 3px solid rgb(0, 0, 0);
+	border-radius: 5px;
+	padding: 26px;
+	margin: 5px;
+	font-size: 15px;
+}
+
+
+#calc{
+width: 250px;
+border: 5px solid rgb(0, 0, 0);
+	border-radius: 3px;
+	padding: 20px;
+	margin: auto;
+}
+
+body {
+  background-color: yellowgreen;
+}
+
+button {
+  background-color: rgb(39, 126, 8);
+  color: rgb(0, 0, 0);
+
+}
+
+</style>
+
+</head>
+<body>
+<h1> Cresto Calculater </h1>
+<h1>by Aaron Abbas <b><i>CEO and founder</i></b> of <b><i>Cresto Industries Inc.</i></b></h1>
+<!-- <img src="assets/five_nights_at_freddys_4__mini_freddy_3___gif_icon_by_geeksomniac_d9cle0i.gif" alt="">
+<img src="assets/dude.gif" alt="">
+<img src="assets/five_nights_at_freddys_4__mini_freddy_3___gif_icon_by_geeksomniac_d9cle0i.gif" alt="">
+<img src="assets/five_nights_at_freddy_s_4___nightmare____icon_gif_by_geeksomniac_d9bqryq.gif" alt="">
+<img src="assets/five_nights_at_freddy_s_4___plushtrap___icon_gif_2_by_geeksomniac_d9bj7me.gif" alt="">
+<img src="assets/halloween_bonnie___five_nights_at_freddy_s_4_gif_by_geeksomniac_d9defl1.gif" alt="">
+<img src="assets/five_nights_at_freddy_s_4___nightmare_foxy___gif_by_geeksomniac_d9anq5f.gif" alt="">
+<img src="assets/five_nights_at_freddys_3__phantom_chica___icon_gif_by_geeksomniac_d8qo70w.gif" alt="">
+<img src="assets/five_nights_at_freddy_s_2___the_puppet___icon_gif_by_geeksomniac_d8f3w2n.gif" alt="">
+<img src="assets/five_nights_at_freddy_s_2___marionette___icon_gif_by_geeksomniac_d868xan.gif" alt="">
+<img src="assets/five_nights_at_freddy_s_2_faceless_bonnie_icon_gif_by_geeksomniac_d842g2v.gif" alt="">
+<img src="assets/five_nights_at_freddy_s_2___golden_freddy___icon_by_geeksomniac_d88h7xl.gif" alt="">
+<img src="assets/five_nights_at_freddys_3___what_can_we_use____icon_by_geeksomniac_d8j11yq.gif" alt="">
+<img src="assets/five_nights_at_freddys_2___endoskeleton___icon_gif_by_geeksomniac_d8c72h8.gif" alt="">
+<img src="assets/springtrap___five_nights_at_freddy_s_3___icon_by_geeksomniac_d8fniyn.gif" alt="">
+<img src="assets/five_nights_at_freddy_s_2___old_chica___icon_gif_by_geeksomniac_d88098s.gif" alt="">
+<img src="assets/five_nights_at_freddy_s_2___old_freddy___icon_gif_by_geeksomniac_d8a4su3.gif" alt="">
+ -->
+
+<div class= "formstyle">
+<form name = "form1">
+
+
+  <input id = "calc" type ="text" name = "answer"> <br> <br>
+
+
+  <input type = "button" value = "1" onclick = "form1.answer.value += '1' ">
+  <input type = "button" value = "2" onclick = "form1.answer.value += '2' ">
+  <input type = "button" value = "3" onclick = "form1.answer.value += '3' ">
+   <input type = "button" value = "+" onclick = "form1.answer.value += '+' ">
+  <br> <br>
+
+  <input type = "button" value = "4" onclick = "form1.answer.value += '4' ">
+  <input type = "button" value = "5" onclick = "form1.answer.value += '5' ">
+  <input type = "button" value = "6" onclick = "form1.answer.value += '6' ">
+  <input type = "button" value = "-" onclick = "form1.answer.value += '-' ">
+  <br> <br>
+
+  <input type = "button" value = "7" onclick = "form1.answer.value += '7' ">
+  <input type = "button" value = "8" onclick = "form1.answer.value += '8' ">
+  <input type = "button" value = "9" onclick = "form1.answer.value += '9' ">
+  <input type = "button" value = "*" onclick = "form1.answer.value += '*' ">
+  <br> <br>
+
+
+  <input type = "button" value = "/" onclick = "form1.answer.value += '/' ">
+  <input type = "button" value = "0" onclick = "form1.answer.value += '0' ">
+    <input type = "button" value = "." onclick = "form1.answer.value += '.' ">
+
+  <input type = "button" value = "=" onclick = "form1.answer.value = eval(form1.answer.value) ">
+  <br>
+
+  <input type = "button" value = "Clear All" onclick = "form1.answer.value = ' ' " id= "clear" >
+  <br>
+
+</form>
+</div>
+</body>
+</html>
